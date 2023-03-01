@@ -184,14 +184,15 @@ def train_blue_ball_model(name, x_data, y_data):
         saver.save(sess, "{}{}.{}".format(m_args["path"]["blue"], blue_ball_model_name, extension))
 
 
-def run(name):
+def train_run(name):
     """ 执行训练
     :param name: 玩法
     :return:
     """
 
     logger.info("正在创建【{}】数据集...".format(name_path[name]["name"]))
-    train_data = create_train_data(args.name, model_args[name]["model_args"]["windows_size"])
+    # train_data = create_train_data(args.name, model_args[name]["model_args"]["windows_size"])
+    train_data = create_train_data(name, model_args[name]["model_args"]["windows_size"])
 
     logger.info("开始训练【{}】红球模型...".format(name_path[name]["name"]))
     start_time = time.time()
@@ -211,7 +212,8 @@ def run(name):
 
 
 if __name__ == '__main__':
-    if not args.name:
-        raise Exception("玩法名称不能为空！")
-    else:
-        run(args.name)
+    # if not args.name:
+    #     raise Exception("玩法名称不能为空！")
+    # else:
+    #     train_run(args.name)
+    train_run('dlt')

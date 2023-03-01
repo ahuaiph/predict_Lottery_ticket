@@ -77,7 +77,7 @@ def spider(name, start, end, mode):
         return pd.DataFrame(data)
 
 
-def run(name):
+def get_run(name):
     """
     :param name: 玩法名称
     :return:
@@ -95,7 +95,8 @@ def run(name):
 
 
 if __name__ == "__main__":
-    if not args.name:
-        raise Exception("玩法名称不能为空！")
-    else:
-        run(name=args.name)
+    # if not args.name:
+    #     raise Exception("玩法名称不能为空！")
+    # else:
+    #     get_run(name=args.name)
+    get_run(name='dlt')

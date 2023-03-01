@@ -157,18 +157,22 @@ def get_final_result(name, predict_features, mode=0):
         }
 
 
-def run(name):
+def predict_run(name):
     windows_size = model_args[name]["model_args"]["windows_size"]
     diff_number = windows_size - 1
     data = spider(name, 1, current_number, "predict") 
     # print(data)
     logger.info("【{}】预测期号：{}".format(name_path[name]["name"], int(current_number) + 1))
     predict_features_ = try_error(1, name, data.iloc[:windows_size], windows_size)
-    logger.info("预测结果：{}".format(get_final_result(name, predict_features_)))
+    result_code = "预测结果：{}".format(get_final_result(name, predict_features_))
+    logger.info(result_code)
+    return result_code
 
 
 if __name__ == '__main__':
-    if not args.name:
-        raise Exception("玩法名称不能为空！")
-    else:
-        run(args.name)
+    # if not args.name:
+    #     raise Exception("玩法名称不能为空！")
+    # else:
+    #     predict_run(args.name)
+    # predict_run('dlt')
+    predict_run(args.name)
