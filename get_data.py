@@ -9,9 +9,9 @@ from bs4 import BeautifulSoup
 from loguru import logger
 from config import os, name_path, data_file_name
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--name', default="ssq", type=str, help="选择爬取数据: 双色球/大乐透")
-args = parser.parse_args()
+# parser = argparse.ArgumentParser()
+# parser.add_argument('--name', default="ssq", type=str, help="选择爬取数据: 双色球/大乐透")
+# args = parser.parse_args()
 
 
 def get_url(name):

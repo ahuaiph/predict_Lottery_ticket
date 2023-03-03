@@ -11,9 +11,9 @@ from config import *
 from modeling import LstmWithCRFModel, SignalLstmModel, tf
 from loguru import logger
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--name', default="ssq", type=str, help="选择训练数据: 双色球/大乐透")
-args = parser.parse_args()
+# parser = argparse.ArgumentParser()
+# parser.add_argument('--name', default="ssq", type=str, help="选择训练数据: 双色球/大乐透")
+# args = parser.parse_args()
 
 pred_key = {}
 
