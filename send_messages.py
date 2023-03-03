@@ -46,7 +46,7 @@ def folder():
     if t1:
         shutil.rmtree(path1)
         print('文件夹：' + path1 + '删除成功')
-    elif t2:
+    if t2:
         shutil.rmtree(path2)
         print('文件夹：' + path2 + '删除成功')
 
